@@ -12,6 +12,9 @@ RUN apt-get update
 RUN python3.6 -m pip install pip --upgrade
 RUN pip install opencv-contrib-python
 RUN pip install tensorflow
+RUN pip install keras
+RUN pip install matplotlib
+RUN pip install pillow
 
 RUN wget https://github.com/tensorflow/models/archive/master.zip -P /camera
 RUN unzip /camera/master.zip
