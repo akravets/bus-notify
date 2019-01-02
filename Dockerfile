@@ -2,7 +2,6 @@ FROM python:3.6.8
 FROM ubuntu:18.10
 
 WORKDIR /camera
-COPY . /camera
 
 #RUN pip install --trusted-host pypi.python.org -r requirements.txt
 RUN apt-get update
@@ -16,5 +15,7 @@ RUN pip install tensorflow
 
 RUN wget https://github.com/tensorflow/models/archive/master.zip -P /camera
 RUN unzip /camera/master.zip
+
+COPY . /camera
 
 CMD ["python3", "camera.py"]
